@@ -1,26 +1,3 @@
-/* ------------------------------------------------------------
-   Restaurant Order System  -  LPC2129 (ARM7)
-   16x2 LCD (8-bit) + 4x4 Keypad + UART0 + HC-05 Bluetooth
-
-   PIN MAP
-   UART0  : P0.0 = TXD0 -> HC-05 RXD
-            P0.1 = RXD0 <- HC-05 TXD
-   LCD    : D0-D7 = P0.16 - P0.23
-            RS = P0.8 , E = P0.9 , RW = GND
-   KEYPAD : Rows (output)  = P0.10 - P0.13
-            Cols (input)   = P0.4  - P0.7  (need 10k pull-ups to 3.3V)
-
-   PCLK assumed = 15 MHz (same as your delay_ms code)
-   HC-05 data mode baud = 9600
-
-   FLOW
-   1. "Restaurant Management" title
-   2. Press 1-9  -> "Table N selected"
-   3. Menu: 1=Dosa 2=Idli 3=Meal 4=Tea   (press a key again = qty+1)
-            #  = send order      * = clear order
-   4. Order shown on LCD + sent to mobile through Bluetooth
-   5. Chef types "ready" on mobile -> LCD shows "Order is READY"
-   ------------------------------------------------------------ */
 #include<LPC21XX.H>
 
 #define LCD_DATA  (0xFF<<16)
